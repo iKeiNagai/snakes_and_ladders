@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (strcasecmp($userData[0], $username) == 0 && $userData[3] === $password) {
                     session_start();
                     $_SESSION['username'] = $username;
-                    $msg = "<span style='color:red;'>insert redirect inside this if!</span>";
+                    header("location:index.php");
                     break;
                 }
             }
@@ -63,5 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <footer>
         <p>Dont have an account?<a href="signup.php">Signup</a></p>
     </footer>
+
 </body>
 </html>

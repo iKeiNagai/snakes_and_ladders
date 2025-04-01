@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +10,9 @@
     <title>Serpent's Ascent</title>
     <link rel="stylesheet" href="index.css">
 </head>
+<button><a href="logout.php">Logout</a></button>
 <header>
-    <h1>Welcome to Serprent's Ascent</h1>
+    <h1>Welcome back <?php echo $_SESSION["username"] ?> to Serprent's Ascent</h1>
     <h2>Select your difficulty:</h1>
 </header>
 <body>
