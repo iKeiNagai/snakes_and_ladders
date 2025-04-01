@@ -63,5 +63,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <footer>
         <p>Dont have an account?<a href="signup.php">Signup</a></p>
     </footer>
+
+    <!-- remove this -->
+    <?php 
+        echo "Session variables <br>";
+        if (session_status() == PHP_SESSION_ACTIVE) {
+            echo "<pre>";
+            print_r($_SESSION);
+            echo '<a href="logout.php">Logout</a>';
+        } else {
+            echo "No active session.";
+        }
+    ?>
 </body>
 </html>
