@@ -4,11 +4,9 @@ $msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (!empty($username) && !empty($gender)  && !empty($email) && !empty($password)) {
+    if (!empty($username) && !empty($password)) {
         //read file to check if user exists
         if (file_exists($file)) {
             $users = file($file, FILE_IGNORE_NEW_LINES); //read file into an array
@@ -17,21 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             foreach ($users as $user) {
                 $userData = explode(",", $user); //split each user data into array
                 
-                //check if user name is the same
-                if (strcasecmp($userData[0], $username) == 0) {
-                    $msg = "<span style='color:red;'>Username already exists!</span>";
+                //check if username and password are same
+                if (strcasecmp($userData[0], $username) == 0 && $userData[3] === $password) {
+                    session_start();
+                    $_SESSION['username'] = $username;
+                    $msg = "<span style='color:red;'>insert redirect inside this if!</span>";
                     break;
                 }
             }
 
             if (empty($msg)) {
-                $newUser = "$username,$gender,$email,$password\n";
-                file_put_contents($file, $newUser, FILE_APPEND);
-
-                $msg = "<span style='color:green;'> Signup successful!";
+                $msg = "<span style='color:red;'>Invalid username or password!</span>";
             }
         }
-
     } else {
         $msg = "<span style='color:red;'>Please fill in all fields.</span>";
     }
@@ -47,41 +43,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <header>
-        <h3>Welcome to Serpent's Ascent</h3>
-        <p>Create new account</p>
+        <h3>Welcome Back</h3>
     </header>
 
     <main>
         <form action="" method="POST">
+
             <label for="username">Username: </label>
             <input type="text" name="username"><br>
-            
-            Gender:
-            <label for="male">Male</label>
-            <input type="radio" name="gender" value="M">
-
-            <label for="female">Female</label>
-            <input type="radio" name="gender" value="F"><br>
-
-            <label for="email">Email: </label>
-            <input type="email" name="email"><br>
 
             <label for="password">Password: </label>
             <input type="password" name="password"><br>
 
-            <input type="submit" value="Register">
+            <input type="submit" value="Login">
             <?php echo $msg; ?>
         </form>
     </main>
 
-    <!-- remove -->
-    <?php 
-        $users = file_get_contents("users.txt");
-        echo "<pre>" . $users;
-    ?>
-
     <footer>
-        <p>Already have an account?<a href="login.php">Login</a></p>
+        <p>Dont have an account?<a href="signup.php">Signup</a></p>
     </footer>
 </body>
 </html>
