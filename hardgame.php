@@ -46,7 +46,29 @@ $player_pos = get_position($_SESSION['player_pos']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single-Player Snakes & Ladders</title>
-    <link rel="stylesheet" href="game100.css">
+    <style>
+        .game-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: url('board.jpg') no-repeat center center;
+            background-size: cover;
+            border: 2px solid black;
+        }
+        .player {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body>
     <h2>Snakes & Ladders - Single Player</h2>

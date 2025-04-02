@@ -46,7 +46,6 @@ $player_pos = get_position($_SESSION['player_pos']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single-Player Snakes & Ladders</title>
-    <link rel="stylesheet" href="game50.css">
     <style>
         .game-container {
             position: relative;
