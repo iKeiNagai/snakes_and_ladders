@@ -4,9 +4,8 @@ session_start();
 if (!isset($_SESSION['player_pos'])) $_SESSION['player_pos'] = 0;
 
 $ladder_snake = [
-    1 => 12, 3 => 22, 5 => 8, 9 => 18, 14 => 29,
-    17 => 4, 20 => 38, 24 => 16, 30 => 44, 34 => 10,
-    40 => 50, 42 => 27, 47 => 36
+    1 => 38, 4 => 14, 8 => 30, 6 => 36, 10 => 32,
+    28 => 48, 21 => 42
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
