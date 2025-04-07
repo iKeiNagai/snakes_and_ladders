@@ -51,7 +51,7 @@ $player_pos = get_position($_SESSION['player_pos']);
             position: relative;
             width: 500px;
             height: 500px;
-            background: url('board.jpg') no-repeat center center;
+            background: url('board100.jpg') no-repeat center center;
             background-size: cover;
             border: 2px solid black;
         }
@@ -68,6 +68,21 @@ $player_pos = get_position($_SESSION['player_pos']);
             font-weight: bold;
             transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
         }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: sans-serif;
+        flex-direction: column;
+    }
+
+.center {
+    text-align: center;
+}
     </style>
 </head>
 <body>
