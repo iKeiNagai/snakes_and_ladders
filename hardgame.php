@@ -71,18 +71,20 @@ $player_pos = get_position($_SESSION['player_pos']);
     </style>
 </head>
 <body>
-    <h2>Snakes & Ladders - Single Player</h2>
-    <?php if (isset($winner)) : ?>
-        <h3><?php echo $winner; ?></h3>
-        <a href="">Restart Game</a>
-    <?php else : ?>
-        <p>Player Position: <?php echo $_SESSION['player_pos']; ?></p>
-        <form method="post">
-            <button type="submit">Roll Dice</button>
-        </form>
-    <?php endif; ?>
-    <div class="game-container">
-        <div class="player" style="left: <?= $player_pos['left'] ?>px; top: <?= $player_pos['top'] ?>px;">P</div>
+    <div class="center">
+        <h2>Snakes & Ladders - Single Player</h2>
+        <?php if (isset($winner)) : ?>
+            <h3><?php echo $winner; ?></h3>
+            <a href="">Restart Game</a>
+        <?php else : ?>
+            <p>Player Position: <?php echo $_SESSION['player_pos']; ?></p>
+            <form method="post">
+                <button type="submit">Roll Dice</button>
+            </form>
+        <?php endif; ?>
+        <div class="game-container">
+            <div class="player" style="left: <?= $player_pos['left'] ?>px; top: <?= $player_pos['top'] ?>px;">P</div>
+        </div>
     </div>
 </body>
 </html>

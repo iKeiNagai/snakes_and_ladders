@@ -46,6 +46,17 @@ $player_pos = get_position($_SESSION['player_pos']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single-Player Snakes & Ladders</title>
     <style>
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: sans-serif;
+        flex-direction: column;
+    }
         .game-container {
             position: relative;
             width: 500px;
@@ -67,9 +78,16 @@ $player_pos = get_position($_SESSION['player_pos']);
             font-weight: bold;
             transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
         }
+
+        .wrapper {
+        text-align: center;
+        }
+
+
     </style>
 </head>
 <body>
+<div class="center">
     <h2>Snakes & Ladders - Single Player</h2>
     <?php if (isset($winner)) : ?>
         <h3><?php echo $winner; ?></h3>
@@ -83,5 +101,6 @@ $player_pos = get_position($_SESSION['player_pos']);
     <div class="game-container">
         <div class="player" style="left: <?= $player_pos['left'] ?>px; top: <?= $player_pos['top'] ?>px;">P</div>
     </div>
+</div>
 </body>
 </html>
