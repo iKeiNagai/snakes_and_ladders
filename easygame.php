@@ -85,6 +85,7 @@ $player_pos = get_position($_SESSION['player_pos']);
 
 
     </style>
+    <button><a href="logout.php">Logout</a></button>
 </head>
 <body>
 <div class="center">
