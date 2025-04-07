@@ -45,7 +45,7 @@ $player_pos = get_position($_SESSION['player_pos']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single-Player Snakes & Ladders</title>
+    <title>Hard Snakes & Ladders</title>
     <style>
         .game-container {
             position: relative;
@@ -87,7 +87,7 @@ $player_pos = get_position($_SESSION['player_pos']);
 </head>
 <body>
     <div class="center">
-        <h2>Snakes & Ladders - Single Player</h2>
+        <h2>Snakes & Ladders </h2>
         <?php if (isset($winner)) : ?>
             <h3><?php echo $winner; ?></h3>
             <a href="">Restart Game</a>
